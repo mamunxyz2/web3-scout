@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web3 Scout AI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 650px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #10131b;
+      color: white;
+    }
+    textarea, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 8px;
+    }
+    textarea { min-height: 100px; }
+    button {
+      background: #f0b90b;
+      border: 0;
+      font-weight: bold;
+    }
+    #report {
+      white-space: pre-wrap;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔎 Web3 Scout</h1>
+  <p>Your Web3 research assistant prototype.</p>
+
+  <textarea id="question"
+    placeholder="Ask about blockchain technology..."></textarea>
+  <button onclick="research()">Analyze question</button>
+  <p id="report">Your report will appear here.</p>
+
+  <script>
+    function research() {
+      const q = document.getElementById("question")
+        .value.trim();
+      const report = document.getElementById("report");
+
+      if (!q) {
+        report.textContent = "Please enter a question.";
+        return;
+      }
+
+      report.textContent =
+        "Research topic: " + q +
+        "\n\nThis is a prototype. Connect a secure AI API " +
+        "to generate real AI answers. No live blockchain " +
+        "data or wallet is connected.";
+    }
+  </script>
+</body>
+</html>
